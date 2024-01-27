@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://42onqplbkk3m"]
+[gd_scene load_steps=4 format=3 uid="uid://42onqplbkk3m"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_67m7u"]
 [ext_resource type="Texture2D" uid="uid://ci7e75e4wsk1r" path="res://cat1.jpeg" id="1_kijog"]
+[ext_resource type="PackedScene" uid="uid://c8shexd2wxsxv" path="res://selectable.tscn" id="3_mf1d8"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_67m7u")
@@ -17,3 +18,6 @@ texture = ExtResource("1_kijog")
 position = Vector2(-22, 2)
 scale = Vector2(0.0270758, 0.0270758)
 texture = ExtResource("1_kijog")
+
+[node name="Area2D" parent="." instance=ExtResource("3_mf1d8")]
+position = Vector2(356, 333)
