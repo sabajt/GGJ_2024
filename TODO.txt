@@ -1,0 +1,12 @@
+TODO
+- Sprite sheets
+- Zoom in and out
+- Text display
+
+Ideas
+- Make giga cat laugh with feather owned by inner cat. You'll fly out of the cat's nose when it makes you laugh.
+- Civil inner cat war. AI clones of the same person, and they're fighting because they can't figure out which is the original.
+- One of them is confused and thinks it's something else.
+
+"My name is inner cat. Welcome to the inner state."
+"Are you ready to leave the giga cat? You can never return once you've gone. Fulfill your destiny but only if you've made peace here."
