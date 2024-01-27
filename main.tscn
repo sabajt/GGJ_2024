@@ -21,3 +21,6 @@ texture = ExtResource("1_kijog")
 
 [node name="Area2D" parent="." instance=ExtResource("3_mf1d8")]
 position = Vector2(356, 333)
+id = "eyeball"
+
+[connection signal="item_selected" from="Area2D" to="." method="_on_item_selected"]

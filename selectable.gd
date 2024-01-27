@@ -1,12 +1,20 @@
 extends Node2D
 
+@export var id: String
+
 var _is_mouseover: bool = false
+
+signal item_selected(id: String)
 
 func _ready() -> void:
 	pass # Replace with function body.
 
 func _process(delta) -> void:
-	pass
+	_handle_input()
+	
+func _handle_input():
+	if _is_mouseover and Input.is_action_just_pressed("select"):
+		item_selected.emit(id)
 	
 func _on_mouse_entered() -> void:
 	_is_mouseover = true
@@ -17,9 +25,9 @@ func _on_mouse_exited() -> void:
 	queue_redraw()
 	
 func _draw() -> void:
-	draw_mouseover()
+	_draw_mouseover()
 	
-func draw_mouseover() -> void:
+func _draw_mouseover() -> void:
 	if _is_mouseover:
 		var size = Vector2(60, 60)
 		var pos = Vector2.ZERO - size / 2
