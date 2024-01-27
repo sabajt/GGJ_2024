@@ -26,6 +26,6 @@ func debug_print() -> void:
 	
 	print("mouse pos = %v" % _mouse_position)
 	
-func _on_item_selected(id):
-	print("item selected %s" % id)
+func _on_item_selected(id, center):
+	print("item selected %s %v" % [id, center])
 	pass # Replace with function body.

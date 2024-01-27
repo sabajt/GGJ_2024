@@ -7,20 +7,21 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_67m7u")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(355, 335)
-
-[node name="Cat1" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(378, 331)
 texture = ExtResource("1_kijog")
 
-[node name="Cat1" type="Sprite2D" parent="Cat1"]
-position = Vector2(-22, 2)
+[node name="EyeballSelectable" parent="." instance=ExtResource("3_mf1d8")]
+position = Vector2(356, 333)
+id = "eyeball"
+highlight_size = Vector2(60, 60)
+
+[node name="EyeballSprite" type="Sprite2D" parent="."]
+position = Vector2(357, 333)
 scale = Vector2(0.0270758, 0.0270758)
 texture = ExtResource("1_kijog")
 
-[node name="Area2D" parent="." instance=ExtResource("3_mf1d8")]
-position = Vector2(356, 333)
-id = "eyeball"
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(355, 335)
 
-[connection signal="item_selected" from="Area2D" to="." method="_on_item_selected"]
+[connection signal="item_selected" from="EyeballSelectable" to="." method="_on_item_selected"]
