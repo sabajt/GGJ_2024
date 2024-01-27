@@ -1,0 +1,121 @@
+[gd_scene load_steps=14 format=3 uid="uid://cto8swrw25w0k"]
+
+[ext_resource type="Texture2D" uid="uid://df84yhy8yasub" path="res://2d_sprite_animation_assets/run_animation/run-1.png" id="1_2dmpi"]
+[ext_resource type="Texture2D" uid="uid://ctbdc7slb4l1x" path="res://2d_sprite_animation_assets/run_animation/run-2.png" id="2_03xd8"]
+[ext_resource type="Texture2D" uid="uid://gkjb538632t6" path="res://2d_sprite_animation_assets/run_animation/run-3.png" id="3_jrgca"]
+[ext_resource type="Texture2D" uid="uid://d2lx4087grm7w" path="res://2d_sprite_animation_assets/run_animation/run-4.png" id="4_8thmc"]
+[ext_resource type="Texture2D" uid="uid://b31n4u26dy3vn" path="res://2d_sprite_animation_assets/run_animation/run-5.png" id="5_00107"]
+[ext_resource type="Texture2D" uid="uid://ceceri8lua8p" path="res://2d_sprite_animation_assets/run_animation/run-6.png" id="6_fo7dn"]
+[ext_resource type="Texture2D" uid="uid://cyhltw2lpniqp" path="res://2d_sprite_animation_assets/run_animation/run-7.png" id="7_gm87w"]
+[ext_resource type="Texture2D" uid="uid://bnveju8oh5xqt" path="res://2d_sprite_animation_assets/run_animation/run-8.png" id="8_mgua6"]
+[ext_resource type="PackedScene" uid="uid://brsmddcb08ic1" path="res://dialog_emitter.tscn" id="10_6873w"]
+
+[sub_resource type="GDScript" id="GDScript_4cqhm"]
+script/source = "extends CharacterBody2D
+
+var hovered : bool = false
+
+func _ready():
+	pass
+	
+func _process(delta):
+	pass
+	
+func _on_mouse_entered():
+	hovered = true
+
+func _on_mouse_exited():
+	hovered = false
+
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if(event.is_pressed()):
+		print('nice to see you');
+		set_scale(Vector2(1.5, 0.5))
+		
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8yn6e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2dmpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_03xd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jrgca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8thmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_00107")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fo7dn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gm87w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mgua6")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_37fry"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqdsa"]
+size = Vector2(158, 173.75)
+
+[node name="Node2D" type="Node2D" groups=["talkers"]]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(195, 135)
+disable_mode = 1
+input_pickable = true
+script = SubResource("GDScript_4cqhm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(-1.00001, 1)
+scale = Vector2(3.14925, 3.14925)
+sprite_frames = SubResource("SpriteFrames_8yn6e")
+animation = &"run"
+frame = 5
+frame_progress = 0.172266
+script = SubResource("GDScript_37fry")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-2, 1)
+shape = SubResource("RectangleShape2D_jqdsa")
+
+[node name="Control" type="Control" parent="CharacterBody2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 24.0
+offset_top = -42.0
+offset_right = 64.0
+offset_bottom = -2.0
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogEmitter" parent="." instance=ExtResource("10_6873w")]
+position = Vector2(502, 313)
+
+[connection signal="input_event" from="CharacterBody2D" to="CharacterBody2D" method="_on_input_event"]
+[connection signal="mouse_entered" from="CharacterBody2D" to="CharacterBody2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CharacterBody2D" to="CharacterBody2D" method="_on_mouse_exited"]
