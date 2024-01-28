@@ -86,13 +86,13 @@ size = Vector2(158, 173.75)
 [node name="Node2D" type="Node2D" groups=["talkers"]]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(195, 135)
+position = Vector2(156, 133)
 disable_mode = 1
 input_pickable = true
 script = SubResource("GDScript_4cqhm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(-1.00001, 1)
+position = Vector2(-8.00006, -21)
 scale = Vector2(3.14925, 3.14925)
 sprite_frames = SubResource("SpriteFrames_8yn6e")
 animation = &"run"
@@ -101,7 +101,7 @@ frame_progress = 0.172266
 script = SubResource("GDScript_37fry")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-2, 1)
+position = Vector2(-4, -9)
 shape = SubResource("RectangleShape2D_jqdsa")
 
 [node name="Control" type="Control" parent="CharacterBody2D"]
@@ -114,7 +114,9 @@ offset_bottom = -2.0
 metadata/_edit_use_anchors_ = true
 
 [node name="DialogEmitter" parent="." instance=ExtResource("10_6873w")]
-position = Vector2(502, 313)
+position = Vector2(527, 361)
+dialogId = 2
+textSizeFactor = 0.5
 
 [connection signal="input_event" from="CharacterBody2D" to="CharacterBody2D" method="_on_input_event"]
 [connection signal="mouse_entered" from="CharacterBody2D" to="CharacterBody2D" method="_on_mouse_entered"]
