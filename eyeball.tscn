@@ -1,40 +1,58 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmvejl2lm868v"]
+[gd_scene load_steps=8 format=3 uid="uid://bmvejl2lm868v"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_02fuw"]
-[ext_resource type="Texture2D" uid="uid://balty142x6rhb" path="res://eyeball.jpg" id="1_eet6w"]
 [ext_resource type="Texture2D" uid="uid://dsgyo6ptu0wy0" path="res://gigacat.jpg" id="2_h3n8g"]
+[ext_resource type="Texture2D" uid="uid://bjwuqpovvdv0t" path="res://eye1.jpg" id="2_vyrc4"]
+[ext_resource type="Texture2D" uid="uid://bchurkqnpod16" path="res://eye2.jpg" id="3_gelhe"]
 [ext_resource type="PackedScene" uid="uid://c8shexd2wxsxv" path="res://selectable.tscn" id="3_l3cpa"]
 [ext_resource type="Texture2D" uid="uid://taklxvpmukfx" path="res://art/back_arrow.png" id="5_obmps"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_md4h5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vyrc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gelhe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_02fuw")
 
-[node name="Eyeball" type="Sprite2D" parent="."]
-position = Vector2(1, 1.00003)
-scale = Vector2(0.407004, 0.408043)
-texture = ExtResource("1_eet6w")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -4)
+scale = Vector2(0.396335, 0.396335)
+sprite_frames = SubResource("SpriteFrames_md4h5")
+autoplay = "default"
+frame = 1
+frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Gigacat" type="Sprite2D" parent="."]
-position = Vector2(-124, -75)
+position = Vector2(-84.1887, -83.8437)
 scale = Vector2(0.0132917, 0.0148019)
 texture = ExtResource("2_h3n8g")
 
 [node name="Selectable" parent="." instance=ExtResource("3_l3cpa")]
-position = Vector2(-124, -75)
+position = Vector2(-84.1887, -83.8437)
 scale = Vector2(4, 3)
 id = "res://main.tscn"
 highlight_size = Vector2(12, 10)
 zoom_scale = 34.0
 
 [node name="BackArrow" type="Sprite2D" parent="."]
-position = Vector2(-515, -367)
+position = Vector2(-515, -199.332)
 scale = Vector2(0.316, 0.317)
 texture = ExtResource("5_obmps")
 
 [node name="BackSelectable" parent="." instance=ExtResource("3_l3cpa")]
-position = Vector2(-519, -367)
+position = Vector2(-519, -199.332)
 scale = Vector2(6, 6)
 highlight_size = Vector2(20, 20)
 is_back = true
