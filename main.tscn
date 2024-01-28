@@ -30,8 +30,15 @@ highlight_size = Vector2(12, 10)
 zoom_scale = 11.5
 
 [node name="BackArrow" type="Sprite2D" parent="."]
-position = Vector2(-513, -364)
-scale = Vector2(0.286765, 0.286765)
+position = Vector2(-514.646, -364.75)
+scale = Vector2(0.317402, 0.317402)
 texture = ExtResource("5_0oot6")
 
+[node name="BackSelectable" parent="." instance=ExtResource("3_mf1d8")]
+position = Vector2(-517, -365)
+scale = Vector2(6, 6)
+highlight_size = Vector2(20, 20)
+is_back = true
+
 [connection signal="item_selected" from="EyeballSelectable" to="." method="_on_item_selected"]
+[connection signal="item_selected" from="BackSelectable" to="." method="_on_item_selected"]

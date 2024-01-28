@@ -8,15 +8,15 @@ enum PATH_CORRECTNESS {
 
 const correct_path : Array[String] = ["res://eyeball.tscn/", "res://eyeball.tscn/"]
 
-var current_path : Array[String] = []
+var current_path : Array[String] = ["res://main.tscn/"]
 var path_correctness : PATH_CORRECTNESS = PATH_CORRECTNESS.CORRECT_SO_FAR
 
 
 func go_down_path (name:String) -> void:
-	current_path.push_front(name)
+	current_path.push_back(name)
 	_evaluate_path_correctness()
 	
-func go_up_path () -> void:
+func go_up_path ():
 	if current_path.size() == 0:
 		print("current_path length is 0")
 		return
