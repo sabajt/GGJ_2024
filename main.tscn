@@ -41,3 +41,4 @@ highlight_size = Vector2(20, 20)
 is_back = true
 
 [connection signal="item_selected" from="EyeballSelectable" to="." method="_on_item_selected"]
+[connection signal="item_selected" from="BackSelectable" to="." method="_on_item_selected"]

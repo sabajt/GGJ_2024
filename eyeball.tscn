@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmvejl2lm868v"]
+[gd_scene load_steps=6 format=3 uid="uid://bmvejl2lm868v"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_02fuw"]
 [ext_resource type="Texture2D" uid="uid://balty142x6rhb" path="res://eyeball.jpg" id="1_eet6w"]
 [ext_resource type="Texture2D" uid="uid://dsgyo6ptu0wy0" path="res://gigacat.jpg" id="2_h3n8g"]
 [ext_resource type="PackedScene" uid="uid://c8shexd2wxsxv" path="res://selectable.tscn" id="3_l3cpa"]
+[ext_resource type="Texture2D" uid="uid://taklxvpmukfx" path="res://art/back_arrow.png" id="5_obmps"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_02fuw")
@@ -27,4 +28,16 @@ id = "res://main.tscn"
 highlight_size = Vector2(12, 10)
 zoom_scale = 34.0
 
+[node name="BackArrow" type="Sprite2D" parent="."]
+position = Vector2(-515, -367)
+scale = Vector2(0.316, 0.317)
+texture = ExtResource("5_obmps")
+
+[node name="BackSelectable" parent="." instance=ExtResource("3_l3cpa")]
+position = Vector2(-519, -367)
+scale = Vector2(6, 6)
+highlight_size = Vector2(20, 20)
+is_back = true
+
 [connection signal="item_selected" from="Selectable" to="." method="_on_item_selected"]
+[connection signal="item_selected" from="BackSelectable" to="." method="_on_item_selected"]
