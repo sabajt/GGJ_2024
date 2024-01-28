@@ -9,6 +9,12 @@ var _transition_id: String
 var _transition_zoom_scale: float
 
 func _ready() -> void:
+	
+	var manager: GameManager = get_node("/root/GameManager")	
+	if manager.current_path.size() <= 1:
+		$BackArrow.visible = false
+		$BackSelectable.visible = false
+	
 	pass # Replace with function body.
 
 func _process(delta: float) -> void:
