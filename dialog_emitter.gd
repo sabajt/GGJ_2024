@@ -1,7 +1,11 @@
 extends Node2D
 
 enum DIALOG_ID {
-	SONG_LYRICS
+	SONG_LYRICS,
+	CRYPTIC,
+	GRAVE_ONE,
+	GRAVE_TWO,
+	GRAVE_THREE
 }
 
 const TEXT_SONG_LYRICS : Array[String] = [
@@ -19,6 +23,44 @@ const TEXT_SONG_LYRICS : Array[String] = [
 	"With ninth whisker - that's the way",
 ]
 
+const TEXT_CRYPTIC : Array[String] = [
+	"Wi",
+	"Eno",
+	"Wi",
+	"NEe",
+	"Uct",
+	"9w",
+	"REITERATE LOOP",
+]
+
+const TEXT_GRAVE1 : Array[String] = [
+	"Dang man he's really dead",
+	"I'm afraid of being dead",
+	"I've only ever been alive"
+]
+
+const TEXT_GRAVE2 : Array[String] = [
+	"I'm a cat meow meow",
+	"Smells weird in here",
+	"Cats have good smells",
+	"I mean good smell",
+	"But good smells too :)"
+]
+
+const TEXT_GRAVE3 : Array[String] = [
+	"OOooOoOOoOo",
+	"ghost cat",
+	"don't wind up like me",
+	"ghost cat",
+	"jump into fire you will see",
+	"me",
+	"it's GHOST CAT",
+]
+
+const TEXT_ENDING = [
+	""
+]
+
 class Bubble:
 	var timeRemaining : float = 0.0
 	var wordBubble : Node2D
@@ -26,6 +68,10 @@ class Bubble:
 func getTexts (id:DIALOG_ID) -> Array[String]:
 	match id:
 		DIALOG_ID.SONG_LYRICS: return TEXT_SONG_LYRICS
+		DIALOG_ID.CRYPTIC: return TEXT_CRYPTIC
+		DIALOG_ID.GRAVE_ONE: return TEXT_GRAVE1
+		DIALOG_ID.GRAVE_TWO: return TEXT_GRAVE2
+		DIALOG_ID.GRAVE_THREE: return TEXT_GRAVE3
 	return []
 
 const timeFactor : float = 100

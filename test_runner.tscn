@@ -117,6 +117,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(527, 361)
 bubbleLifetime = 220.0
 emitInterval = 240.0
+dialogId = 4
 textRotation = -0.15
 
 [connection signal="input_event" from="CharacterBody2D" to="CharacterBody2D" method="_on_input_event"]
