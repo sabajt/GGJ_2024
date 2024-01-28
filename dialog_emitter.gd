@@ -43,6 +43,7 @@ var bubbles : Array[Bubble] = []
 
 @export var dialogId : DIALOG_ID = DIALOG_ID.JERRY
 @export var textSizeFactor : float = 1.0
+@export var textRotation : float = 0.0
 
 var textIndex : int = 0
 var texts : Array[String] = [
@@ -67,6 +68,7 @@ func _process(delta: float) -> void:
 		var wb : Node2D = _word_bubble.instantiate()
 		add_child(wb)
 		
+		wb.set_rotation(textRotation)
 		wb.set_scale(Vector2(textSizeFactor, textSizeFactor))
 		
 		wb.get_node("Label").text = texts[textIndex]
