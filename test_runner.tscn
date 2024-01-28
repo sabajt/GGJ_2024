@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ceceri8lua8p" path="res://2d_sprite_animation_assets/run_animation/run-6.png" id="6_fo7dn"]
 [ext_resource type="Texture2D" uid="uid://cyhltw2lpniqp" path="res://2d_sprite_animation_assets/run_animation/run-7.png" id="7_gm87w"]
 [ext_resource type="Texture2D" uid="uid://bnveju8oh5xqt" path="res://2d_sprite_animation_assets/run_animation/run-8.png" id="8_mgua6"]
-[ext_resource type="PackedScene" path="res://dialog_emitter.tscn" id="10_6873w"]
+[ext_resource type="PackedScene" uid="uid://brsmddcb08ic1" path="res://dialog_emitter.tscn" id="10_6873w"]
 
 [sub_resource type="GDScript" id="GDScript_4cqhm"]
 script/source = "extends CharacterBody2D
@@ -83,7 +83,7 @@ func _process(delta):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqdsa"]
 size = Vector2(158, 173.75)
 
-[node name="Node2D" type="Node2D" groups=["talkers"]]
+[node name="Node2D2" type="Node2D" groups=["talkers"]]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(156, 133)
