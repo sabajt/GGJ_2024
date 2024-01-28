@@ -1,0 +1,49 @@
+General Todo:
+- All Characters should just be part of the background / "scene" image.
+- Optimize workflow for scanning in / crop & sizing images
+- Images should be smaller since there will be more 
+- Shakey trace animations (2-3 per image)
+- Kewl chunky scene titles?
+- Fix bad looking recursion point resolution (current zoom level overlay to fadeout during zoom?)
+
+~*~*~*~*~*~*~*~*~*~
+
+Hottake (the 2nd but is it better than the first?): planet Gigacat is an observation maze. The starting screen planet surface (face) has a handful of links. Those links go to separate scenes, but they all link back to face/planet surface - forward OR backwards. This makes a difference because there is a specific order forwards to obtain the feather, for example: F(ace) -> Ear -> F -> Nose -> F -> Whisker -> F -> Nose -> F -> Tooth. While the end of the correct path is the feather, the end of the other paths should terminate at the same point of "depth". Indication at the end (presented with the dialog system, as a text from a sign lol?). Each scene's dialog are coded hints. In addition, there are metahints about the structure of the puzzle. 
+
+Here are specific hints that could be used on the 1 parent and handful of child scenes:
+- String band tune titles: called in the same order each time. A discussion in between a set repitition makes clear first vs last.
+- Cryptic dialog such as "WE->NE->9W->NE->WUC" which is the abbreviated order of execution (see list below)
+- Art exhibit with pictures of the things in order: the dialog can be atmospheric here
+- A hint about how to interpret the hints (could come from inner cat)
+- A subtle difference in the scene for each step of the right path only (we've got to keep track of the path for the win condition anyway - so could read that data to dynamically add the embelishment? 
+
+Scenes:
+	
+Gigacat Face (parent)
+West Eyeball
+Northeastern Ear
+9th Whisker
+East Nostril
+West Upper Canine
+
+ ~*~*~*~*~*~*~*~*~*~
+
+Hottake: planet Gigacat is basically a big maze. Make many selectables with many paths. You must pay attention to the dialog to figure out where to go (to ultimately get the feather to tickle nose and get laugh-ejected off by Gigacat itself"). Nested there and back maze with the one and only item at the turnaround point. 
+- this would require a lot of content...
+- tedious to play anyway?
+
+ ~*~*~*~*~*~*~*~*~*~
+
+Cat string band
+- Playing fiddle tunes
+- Idle animation cycles thru tunes being called (dialog emitter) and played:
+  - chase a'mouse round the gumstump 
+  - sunbeam in the windowsill 
+  - dinner's 1 minute late blues
+  - heathcliff's reel
+  - scratchin' couch
+
+ ~*~*~*~*~*~*~*~*~*~
+
+Vacuum cleaner event??
+
