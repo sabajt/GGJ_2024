@@ -14,7 +14,7 @@ texture = ExtResource("1_kijog")
 
 [node name="EyeballSelectable" parent="." instance=ExtResource("3_mf1d8")]
 position = Vector2(-189.5, -0.5)
-id = "eyeball"
+id = "res://test_runner.tscn"
 highlight_size = Vector2(60, 60)
 
 [node name="EyeballSprite" type="Sprite2D" parent="."]
