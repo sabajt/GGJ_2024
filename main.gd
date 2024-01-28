@@ -49,11 +49,19 @@ func debug_print() -> void:
 
 	print("mouse pos = %v" % _mouse_position)
 	
-func _on_item_selected(id: String, center: Vector2, zoom_scale: float):
+func _on_item_selected(id: String, center: Vector2, zoom_scale: float, is_back: bool):
 	_is_transitioning = true
 	_transition_pos = center
 	_transition_id = id
 	_transition_zoom_scale = zoom_scale
+	
+	var manager: GameManager = get_node("/root/GameManager")
+	
+	if is_back:
+		manager.go_up_path()
+	else:
+		manager.go_down_path(id)
+	
 	print("item selected %s %v -- zoom scale = %f" % [id, center, zoom_scale])
 
 
