@@ -5,6 +5,7 @@ var _transition_t: float = 0
 var _is_transitioning: bool = false
 var _transition_pos: Vector2
 var _transition_id: String
+var _transition_zoom_scale: float
 
 func _ready() -> void:
 	pass # Replace with function body.
@@ -27,7 +28,8 @@ func _process_transition(delta: float):
 	var pan_t = min(_transition_t / (duration / 2.0), 1)
 	pan_t = -pan_t * (pan_t - 2)
 	
-	$Camera2D.zoom = Vector2.ONE.lerp(Vector2(36, 36), zoom_t)
+	var zoom_to = Vector2(_transition_zoom_scale, _transition_zoom_scale)
+	$Camera2D.zoom = Vector2.ONE.lerp(zoom_to, zoom_t)
 	$Camera2D.position = Vector2.ZERO.lerp(_transition_pos, pan_t)
 	
 	if _transition_t == duration:
@@ -47,10 +49,11 @@ func debug_print() -> void:
 
 	print("mouse pos = %v" % _mouse_position)
 	
-func _on_item_selected(id, center):
+func _on_item_selected(id, center, zoom_scale):
 	_is_transitioning = true
 	_transition_pos = center
 	_transition_id = id
+	_transition_zoom_scale = zoom_scale
 	print("item selected %s %v" % [id, center])
 
 

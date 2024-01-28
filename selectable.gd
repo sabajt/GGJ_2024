@@ -2,6 +2,7 @@ extends Node2D
 
 @export var id: String
 @export var highlight_size: Vector2
+@export var zoom_scale: float
 
 @onready var _origin = Vector2.ZERO - highlight_size / 2
 
@@ -13,14 +14,14 @@ signal item_selected(id: String, center: Vector2)
 
 func _ready() -> void:
 	_highlight_rect =  Rect2(_origin, highlight_size)
-	_highlight_color = Color(1, 1, 1, 0.3)
+	_highlight_color = Color(0, 1, 0, 0.4)
 
 func _process(delta) -> void:
 	_handle_input()
 	
 func _handle_input():
 	if _is_mouseover and Input.is_action_just_pressed("select"):
-		item_selected.emit(id, transform.origin)
+		item_selected.emit(id, transform.origin, zoom_scale)
 	
 func _on_mouse_entered() -> void:
 	_is_mouseover = true
