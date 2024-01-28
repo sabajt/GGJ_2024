@@ -10,7 +10,7 @@ var _is_mouseover: bool = false
 var _highlight_rect
 var _highlight_color
 
-signal item_selected(id: String, center: Vector2)
+signal item_selected(id: String, center: Vector2, zoom_scale: float)
 
 func _ready() -> void:
 	_highlight_rect =  Rect2(_origin, highlight_size)

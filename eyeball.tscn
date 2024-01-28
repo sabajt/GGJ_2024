@@ -1,10 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmvejl2lm868v"]
+[gd_scene load_steps=5 format=3 uid="uid://bmvejl2lm868v"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_02fuw"]
 [ext_resource type="Texture2D" uid="uid://balty142x6rhb" path="res://eyeball.jpg" id="1_eet6w"]
+[ext_resource type="Texture2D" uid="uid://dsgyo6ptu0wy0" path="res://gigacat.jpg" id="2_h3n8g"]
+[ext_resource type="PackedScene" uid="uid://c8shexd2wxsxv" path="res://selectable.tscn" id="3_l3cpa"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_02fuw")
 
 [node name="Eyeball" type="Sprite2D" parent="."]
-position = Vector2(598.5, 451.5)
+position = Vector2(1, 1.00003)
 scale = Vector2(0.407004, 0.408043)
 texture = ExtResource("1_eet6w")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Gigacat" type="Sprite2D" parent="."]
+position = Vector2(-124, -75)
+scale = Vector2(0.0132917, 0.0148019)
+texture = ExtResource("2_h3n8g")
+
+[node name="Selectable" parent="." instance=ExtResource("3_l3cpa")]
+position = Vector2(-124, -75)
+scale = Vector2(4, 3)
+id = "res://main.tscn"
+highlight_size = Vector2(12, 10)
+zoom_scale = 34.0
+
+[connection signal="item_selected" from="Selectable" to="." method="_on_item_selected"]

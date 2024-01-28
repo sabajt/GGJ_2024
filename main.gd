@@ -49,11 +49,11 @@ func debug_print() -> void:
 
 	print("mouse pos = %v" % _mouse_position)
 	
-func _on_item_selected(id, center, zoom_scale):
+func _on_item_selected(id: String, center: Vector2, zoom_scale: float):
 	_is_transitioning = true
 	_transition_pos = center
 	_transition_id = id
 	_transition_zoom_scale = zoom_scale
-	print("item selected %s %v" % [id, center])
+	print("item selected %s %v -- zoom scale = %f" % [id, center, zoom_scale])
 
 

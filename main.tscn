@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://42onqplbkk3m"]
+[gd_scene load_steps=6 format=3 uid="uid://42onqplbkk3m"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_67m7u"]
 [ext_resource type="Texture2D" uid="uid://dsgyo6ptu0wy0" path="res://gigacat.jpg" id="2_dpqqm"]
 [ext_resource type="PackedScene" uid="uid://c8shexd2wxsxv" path="res://selectable.tscn" id="3_mf1d8"]
 [ext_resource type="Texture2D" uid="uid://balty142x6rhb" path="res://eyeball.jpg" id="4_ltkqy"]
+[ext_resource type="Texture2D" uid="uid://taklxvpmukfx" path="res://art/back_arrow.png" id="5_0oot6"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_67m7u")
@@ -13,13 +14,6 @@ position = Vector2(0.999958, 0.500028)
 scale = Vector2(0.402549, 0.411819)
 texture = ExtResource("2_dpqqm")
 
-[node name="EyeballSelectable" parent="." instance=ExtResource("3_mf1d8")]
-position = Vector2(-246, -30)
-scale = Vector2(4, 3)
-id = "res://eyeball.tscn/"
-highlight_size = Vector2(10, 10)
-zoom_scale = 11.5
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
 
@@ -27,5 +21,17 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 position = Vector2(-246, -29)
 scale = Vector2(0.0360936, 0.0360936)
 texture = ExtResource("4_ltkqy")
+
+[node name="EyeballSelectable" parent="." instance=ExtResource("3_mf1d8")]
+position = Vector2(-246, -30)
+scale = Vector2(4, 3)
+id = "res://eyeball.tscn/"
+highlight_size = Vector2(12, 10)
+zoom_scale = 11.5
+
+[node name="BackArrow" type="Sprite2D" parent="."]
+position = Vector2(-513, -364)
+scale = Vector2(0.286765, 0.286765)
+texture = ExtResource("5_0oot6")
 
 [connection signal="item_selected" from="EyeballSelectable" to="." method="_on_item_selected"]
