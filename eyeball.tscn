@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c8shexd2wxsxv" path="res://selectable.tscn" id="3_l3cpa"]
 [ext_resource type="Texture2D" uid="uid://taklxvpmukfx" path="res://art/back_arrow.png" id="5_obmps"]
 [ext_resource type="AudioStream" uid="uid://c83icuw3gm3t1" path="res://westbound for eyeball town fiddle.mp3" id="6_hrc4k"]
-[ext_resource type="PackedScene" path="res://dialog_emitter.tscn" id="8_uow84"]
+[ext_resource type="PackedScene" uid="uid://brsmddcb08ic1" path="res://dialog_emitter.tscn" id="8_uow84"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_md4h5"]
 animations = [{

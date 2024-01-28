@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhasc5ibd7adp"]
+[gd_scene load_steps=8 format=3 uid="uid://bd08smqk7bo26"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_2sf32"]
 [ext_resource type="Texture2D" uid="uid://bqykx53b0ouv5" path="res://nostril1.jpg" id="2_06lqs"]
 [ext_resource type="Texture2D" uid="uid://cx62rfvgwrytr" path="res://nostril2.jpg" id="3_5j3l2"]
 [ext_resource type="Texture2D" uid="uid://dsgyo6ptu0wy0" path="res://gigacat.jpg" id="4_md4ny"]
 [ext_resource type="PackedScene" uid="uid://c8shexd2wxsxv" path="res://selectable.tscn" id="5_5c5yr"]
 [ext_resource type="Texture2D" uid="uid://taklxvpmukfx" path="res://art/back_arrow.png" id="6_0uyes"]
+[ext_resource type="PackedScene" uid="uid://brsmddcb08ic1" path="res://dialog_emitter.tscn" id="7_0yorf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qafhv"]
 animations = [{
@@ -22,7 +22,6 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_2sf32")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.330711, -8.56251)
@@ -54,6 +53,26 @@ position = Vector2(-519, -199.332)
 scale = Vector2(6, 6)
 highlight_size = Vector2(20, 20)
 is_back = true
+
+[node name="dialo" parent="." instance=ExtResource("7_0yorf")]
+position = Vector2(-357, 219)
+emitInterval = 501.0
+dialogId = 2
+textRotation = -0.3
+
+[node name="dialo2" parent="." instance=ExtResource("7_0yorf")]
+position = Vector2(50, -29)
+bubbleLifetime = 300.0
+emitInterval = 350.0
+dialogId = 3
+
+[node name="dialo3" parent="." instance=ExtResource("7_0yorf")]
+position = Vector2(405, 201)
+bubbleLifetime = 500.0
+emitInterval = 526.91
+dialogId = 4
+textSizeFactor = 0.7
+textRotation = 0.4
 
 [connection signal="item_selected" from="Selectable" to="." method="_on_item_selected"]
 [connection signal="item_selected" from="BackSelectable" to="." method="_on_item_selected"]
