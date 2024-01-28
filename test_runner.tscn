@@ -115,8 +115,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="DialogEmitter" parent="." instance=ExtResource("10_6873w")]
 position = Vector2(527, 361)
-dialogId = 2
-textSizeFactor = 0.5
+bubbleLifetime = 220.0
+emitInterval = 240.0
 textRotation = -0.15
 
 [connection signal="input_event" from="CharacterBody2D" to="CharacterBody2D" method="_on_input_event"]

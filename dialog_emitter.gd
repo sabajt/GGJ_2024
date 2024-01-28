@@ -1,23 +1,22 @@
 extends Node2D
 
 enum DIALOG_ID {
-	JERRY,
-	STEVE,
-	SAMANTHA
+	SONG_LYRICS
 }
 
-const TEXTS_JERRY : Array[String] = [
-	"u think u know me",
-	"...but u dont.........",
-	"if u wanna test me ull have to stand toe 2 toe bub",
-	"Come to Brazil :D"
-]
-const TEXTS_STEVE : Array[String] = [
-	"hey it's steve and im really cool",
-	"don't like drugs but i like going to school"
-]
-const TEXTS_SAMANTHA : Array[String] = [
-	"samanta"
+const TEXT_SONG_LYRICS : Array[String] = [
+	"On out west he sees you now",
+	"Through this tune you may see how",
+	"Visit me at my peepaw's grave",
+	"Down in east nostril place",
+	"Deeper in you'll come back here",
+	"Deeper yet we'll still be here",
+	"And did you know, did you hear?",
+	"Do you hear us in northeastern ear?",
+	"You may be a feline but to tell you the truth",
+	"He'll brush your west upper canine tooth",
+	"And to finish it off, floss away",
+	"With ninth whisker - that's the way",
 ]
 
 class Bubble:
@@ -26,31 +25,25 @@ class Bubble:
 
 func getTexts (id:DIALOG_ID) -> Array[String]:
 	match id:
-		DIALOG_ID.JERRY: return TEXTS_JERRY
-		DIALOG_ID.STEVE: return TEXTS_STEVE
-		DIALOG_ID.SAMANTHA: return TEXTS_SAMANTHA
+		DIALOG_ID.SONG_LYRICS: return TEXT_SONG_LYRICS
 	return []
 
 const timeFactor : float = 100
 
-const bubbleLifetime : float = 325
+@export var bubbleLifetime : float = 325
 const bubbleFadeTime : float = 100
 
-const emitInterval : float = 500
+@export var emitInterval : float = 500
 
 var emitCountdown : float = 100.0
 var bubbles : Array[Bubble] = []
 
-@export var dialogId : DIALOG_ID = DIALOG_ID.JERRY
+@export var dialogId : DIALOG_ID = DIALOG_ID.SONG_LYRICS
 @export var textSizeFactor : float = 1.0
 @export var textRotation : float = 0.0
 
 var textIndex : int = 0
 var texts : Array[String] = [
-	"u think u know me",
-	"...but u dont.........",
-	"if u wanna test me ull have to stand toe 2 toe bub",
-	"Come to Brazil :D"
 ]
 
 @onready var _word_bubble : PackedScene = preload("res://word_bubble.tscn")
@@ -61,6 +54,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	emitCountdown -= delta * timeFactor
+	
+	if texts.size() == 0: return
 
 	if (emitCountdown <= 0):
 		emitCountdown = emitInterval
