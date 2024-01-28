@@ -3,7 +3,8 @@ extends Node2D
 var _mouse_position: Vector2
 var _transition_t: float = 0
 var _is_transitioning: bool = false
-var _transition_target: Vector2
+var _transition_pos: Vector2
+var _transition_id: String
 
 func _ready() -> void:
 	pass # Replace with function body.
@@ -27,11 +28,15 @@ func _process_transition(delta: float):
 	pan_t = -pan_t * (pan_t - 2)
 	
 	$Camera2D.zoom = Vector2.ONE.lerp(Vector2(36, 36), zoom_t)
-	$Camera2D.position = Vector2.ZERO.lerp(_transition_target, pan_t)
+	$Camera2D.position = Vector2.ZERO.lerp(_transition_pos, pan_t)
 	
 	if _transition_t == duration:
 		_transition_t = 0
 		_is_transitioning = false
+		_complete_transition()
+		
+func _complete_transition():
+		get_tree().change_scene_to_file(_transition_id)
 		
 func handle_input(delta: float) -> void:
 	if Input.is_action_just_pressed("debug_print"): # p
@@ -39,12 +44,13 @@ func handle_input(delta: float) -> void:
 		
 func debug_print() -> void:
 	print("zoom = %v" % $Camera2D.zoom)
-	#get_tree().change_scene_to_file("res://eyeball.tscn")
+
 	print("mouse pos = %v" % _mouse_position)
 	
 func _on_item_selected(id, center):
 	_is_transitioning = true
-	_transition_target = center
+	_transition_pos = center
+	_transition_id = id
 	print("item selected %s %v" % [id, center])
 
 
