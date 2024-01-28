@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://42onqplbkk3m"]
+[gd_scene load_steps=7 format=3 uid="uid://42onqplbkk3m"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_67m7u"]
 [ext_resource type="Texture2D" uid="uid://dsgyo6ptu0wy0" path="res://gigacat.jpg" id="2_dpqqm"]
+[ext_resource type="Texture2D" uid="uid://bjwuqpovvdv0t" path="res://eye1.jpg" id="3_6rr77"]
 [ext_resource type="PackedScene" uid="uid://c8shexd2wxsxv" path="res://selectable.tscn" id="3_mf1d8"]
-[ext_resource type="Texture2D" uid="uid://balty142x6rhb" path="res://eyeball.jpg" id="4_ltkqy"]
 [ext_resource type="Texture2D" uid="uid://taklxvpmukfx" path="res://art/back_arrow.png" id="5_0oot6"]
+[ext_resource type="Texture2D" uid="uid://bqykx53b0ouv5" path="res://nostril1.jpg" id="6_vy24f"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_67m7u")
@@ -18,9 +19,9 @@ texture = ExtResource("2_dpqqm")
 position = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="Eyeball" type="Sprite2D" parent="."]
-position = Vector2(-246, -29)
-scale = Vector2(0.0360936, 0.0360936)
-texture = ExtResource("4_ltkqy")
+position = Vector2(-241.107, -25.3598)
+scale = Vector2(0.0328317, 0.0328317)
+texture = ExtResource("3_6rr77")
 
 [node name="EyeballSelectable" parent="." instance=ExtResource("3_mf1d8")]
 position = Vector2(-246, -30)
@@ -40,5 +41,18 @@ scale = Vector2(6, 6)
 highlight_size = Vector2(20, 20)
 is_back = true
 
+[node name="Nostril" type="Sprite2D" parent="."]
+position = Vector2(1.50546, 107.827)
+scale = Vector2(0.00967998, 0.00967998)
+texture = ExtResource("6_vy24f")
+
+[node name="NostrilSelectable" parent="." instance=ExtResource("3_mf1d8")]
+position = Vector2(1.50546, 107.827)
+scale = Vector2(2, 2)
+id = "res://nostril.tscn/"
+highlight_size = Vector2(6, 6)
+zoom_scale = 20.0
+
 [connection signal="item_selected" from="EyeballSelectable" to="." method="_on_item_selected"]
 [connection signal="item_selected" from="BackSelectable" to="." method="_on_item_selected"]
+[connection signal="item_selected" from="NostrilSelectable" to="." method="_on_item_selected"]
