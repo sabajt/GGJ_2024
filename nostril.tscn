@@ -42,6 +42,7 @@ position = Vector2(-363.189, 128.156)
 scale = Vector2(4, 3)
 id = "res://main.tscn"
 highlight_size = Vector2(7, 4)
+zoom_scale = 26.0
 
 [node name="BackArrow" type="Sprite2D" parent="."]
 position = Vector2(-515, -199.332)
@@ -53,3 +54,6 @@ position = Vector2(-519, -199.332)
 scale = Vector2(6, 6)
 highlight_size = Vector2(20, 20)
 is_back = true
+
+[connection signal="item_selected" from="Selectable" to="." method="_on_item_selected"]
+[connection signal="item_selected" from="BackSelectable" to="." method="_on_item_selected"]

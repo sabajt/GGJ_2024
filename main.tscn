@@ -51,7 +51,7 @@ position = Vector2(1.50546, 107.827)
 scale = Vector2(2, 2)
 id = "res://nostril.tscn/"
 highlight_size = Vector2(6, 6)
-zoom_scale = 20.0
+zoom_scale = 36.0
 
 [connection signal="item_selected" from="EyeballSelectable" to="." method="_on_item_selected"]
 [connection signal="item_selected" from="BackSelectable" to="." method="_on_item_selected"]
