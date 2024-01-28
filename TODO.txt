@@ -1,7 +1,9 @@
 TODO
-- Sprite sheets
+X Sprite sheets
 - Zoom in and out
-- Text display
+X Text display
+- Make two scene swith dialog emitters.
+- 
 
 Ideas
 - Make giga cat laugh with feather owned by inner cat. You'll fly out of the cat's nose when it makes you laugh.
