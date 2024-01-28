@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmvejl2lm868v"]
+[gd_scene load_steps=10 format=3 uid="uid://bmvejl2lm868v"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_02fuw"]
 [ext_resource type="Texture2D" uid="uid://dsgyo6ptu0wy0" path="res://gigacat.jpg" id="2_h3n8g"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c8shexd2wxsxv" path="res://selectable.tscn" id="3_l3cpa"]
 [ext_resource type="Texture2D" uid="uid://taklxvpmukfx" path="res://art/back_arrow.png" id="5_obmps"]
 [ext_resource type="AudioStream" uid="uid://c83icuw3gm3t1" path="res://westbound for eyeball town fiddle.mp3" id="6_hrc4k"]
+[ext_resource type="PackedScene" uid="uid://brsmddcb08ic1" path="res://dialog_emitter.tscn" id="8_uow84"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_md4h5"]
 animations = [{
@@ -59,8 +60,14 @@ highlight_size = Vector2(20, 20)
 is_back = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-486, -401)
 stream = ExtResource("6_hrc4k")
 autoplay = true
+
+[node name="Dialog" parent="." instance=ExtResource("8_uow84")]
+position = Vector2(-168, -247)
+bubbleLifetime = 220.0
+emitInterval = 240.0
 
 [connection signal="item_selected" from="Selectable" to="." method="_on_item_selected"]
 [connection signal="item_selected" from="BackSelectable" to="." method="_on_item_selected"]
