@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bd08smqk7bo26"]
+[gd_scene load_steps=9 format=3 uid="uid://bd08smqk7bo26"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_nkw7r"]
 [ext_resource type="Texture2D" uid="uid://bqykx53b0ouv5" path="res://nostril1.jpg" id="2_06lqs"]
 [ext_resource type="Texture2D" uid="uid://cx62rfvgwrytr" path="res://nostril2.jpg" id="3_5j3l2"]
 [ext_resource type="Texture2D" uid="uid://dsgyo6ptu0wy0" path="res://gigacat.jpg" id="4_md4ny"]
-[ext_resource type="PackedScene" uid="uid://c8shexd2wxsxv" path="res://selectable.tscn" id="5_5c5yr"]
+[ext_resource type="PackedScene" path="res://selectable.tscn" id="5_5c5yr"]
 [ext_resource type="Texture2D" uid="uid://taklxvpmukfx" path="res://art/back_arrow.png" id="6_0uyes"]
 [ext_resource type="PackedScene" uid="uid://brsmddcb08ic1" path="res://dialog_emitter.tscn" id="7_0yorf"]
 
@@ -22,6 +23,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_nkw7r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.330711, -8.56251)
